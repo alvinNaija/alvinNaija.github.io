@@ -1,0 +1,196 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+a:hover, a:active {
+    outline: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*Casing*/
+.casing-container {
+    margin: 50px 20px 20px 20px;
+}
+
+h6 {
+    margin-bottom: 8px;
+    font-size: 1.0em;
+    display: inline-block;
+    color: black;
+    margin-top: 15px;
+    opacity: 0.7;
+}
+
+.casing-container h7 {
+    margin-bottom: 8px;
+    font-size: 0.8em;
+    opacity: 0.8;
+    display: inline-block;
+    font-style: italic;
+}
+
+.casing-container select {
+    width: 350px;
+    display: inline-block;
+    padding: 8px;
+    opacity: 0.6;
+    font-size: 0.8em;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.casing-container select option {
+    opacity: 0.6;
+}
+
+/*Coiled Tubing*/
+.coiled-tubing-container {
+    margin: 20px;
+}
+
+.coiled-tubing-container h7 {
+    margin-bottom: 15px;
+    font-size: 0.8em;
+    opacity: 0.8;
+    display: inline-block;
+    font-style: italic;
+}
+
+.coiled-tubing-container select {
+    width: 350px;
+    display: inline-block;
+    padding: 8px;
+    opacity: 0.6;
+    font-size: 0.8em;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.coiled-tubing-container select option {
+    opacity: 0.6;
+}
+
+#configuration-container {
+    display: inline-block;
+    float: left;
+    min-height: 100%;
+}
+
+#graph-container {
+    display: inline-block;
+    margin-left: 16px;
+    padding-top: 15px;
+    border-left: 0.02em solid #23232396;
+    float: left;
+    position: absolute;
+    bottom: 8px;
+    top: 8px;
+}
+
+.component-depth-container {
+    margin: 20px;
+}
+
+.component-depth-container h7 {
+    margin-bottom: 15px;
+    font-size: 0.8em;
+    opacity: 0.8;
+    display: inline-block;
+    font-style: italic;
+}
+
+.component-depth-container input {
+    width: 90px;
+    display: inline-block;
+    padding: 8px;
+    opacity: 0.6;
+    font-size: 0.8em;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.component-depth-container button {
+    width: 350px;
+    padding: 8px;
+    opacity: 0.6;
+    font-size: 1.0em;
+    border-radius: 3px;
+    margin-top: 15px;
+    background-color: #1E8BC3;
+    opacity: 0.8;
+    color: white;
+    border: 1px solid white;
+}
+
+path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+}
+
+.radio-button {
+    display: inline-block;
+    float: right;
+    margin-top: 24px;
+}
+
+.push-left {
+    float: left;
+    text-align: left;
+    display: inline-block;
+}
+
+.push-right {
+    text-align: right;
+    float: right;
+    display: inline-block;
+}

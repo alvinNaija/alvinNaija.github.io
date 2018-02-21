@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Casing Drawing</title>
+    <script src="./lib/d3/d3.js"></script>
+    <script src="./js/constants.js"></script>
+    <script src="./js/operations.js"></script>
+    <link type="text/css" rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<div id="body-wrapper">
+    <div id="configuration-container">
+        <div class="casing-container">
+            <h6>CASING</h6> <!--<input class="radio-button" type="radio" name="component-selector" checked="checked">-->
+            <br/>
+            <h7><i>Grade | OD(m) | ID(m) | Wall Thickness(m)</i></h7>
+            <br/>
+            <select id="casing-selection">
+                <option>Select Casing</option>
+            </select>
+        </div>
+        <div class="coiled-tubing-container">
+            <h6>COILED TUBING</h6><!-- <input class="radio-button" type="radio" name="component-selector">-->
+            <br/>
+            <h7><i>Grade | OD(m) | ID(m) | Wall Thickness(m)</i></h7>
+            <br/>
+            <select id="tubing-selection">
+                <option>Select Coiled Tubing</option>
+            </select>
+        </div>
+        <div class="component-depth-container">
+            <h6>DEPTH</h6>
+            <br/>
+            <div class="push-left">
+                <h7><i>Casing</i></h7>
+                <br/>
+                <input id="depth-od" onkeypress="validate(event)">
+            </div>
+            <div class="push-right">
+                <h7><i>Tubing</i></h7>
+                <br/>
+                <input id="depth-id" onkeypress="validate(event)">
+            </div>
+
+            <br/>
+            <button onclick="drawComponent()">ADD COMPONENT</button>
+        </div>
+    </div>
+    <div id="graph-container">
+    </div>
+</div>
+<script>
+    d3.json(FILE_NAME_CASING_METRIC, showCasingList);
+    d3.json(FILE_NAME_COILED_TUBING, showCoiledTubing);
+</script>
+</body>
+</html>
