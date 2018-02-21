@@ -184,19 +184,40 @@ function drawComponent() {
     var innerDiameter;
     var depthOd;
     var origin_x;
+    wallThickness = (x_scale(0.005) - x_scale(0));
+    innerDiameter = (x_scale(selectedComponentData[KEY_CASING_ID_M])  - x_scale(0)) +x_scale(0.1)-x_scale(0);
+    depthOd = d3.select('#depth-od').property('value');
+    origin_x = x_scale(0.25);
+    d3.select(TAG_SVG).select('#hole').remove();
+    d3.select(TAG_SVG).append("rect")
+        .attr('id', 'hole')
+        .attr('x',origin_x)
+        .attr('y', y_scale(0))
+        .style("stroke-width", 1)
+        .attr('width', ( innerDiameter - (wallThickness / 2)))
+        .attr('height', y_scale(depthOd) - y_scale(0) + y_scale(50)-y_scale(0))
+        .style("fill", "#eeeeee")
+        .style('stroke', 'black')
+        .style('stroke-dasharray',  "5");
+
+
     if (selectedComponentData) {
         wallThickness = (x_scale(selectedComponentData[KEY_CASING_WALL_THICKNESS_M]) - x_scale(0));
         innerDiameter = (x_scale(selectedComponentData[KEY_CASING_ID_M]) - x_scale(0));
         depthOd = d3.select('#depth-od').property('value');
         origin_x = x_scale(0.3);
         d3.select(TAG_SVG).select('#outer').remove();
-        d3.select(TAG_SVG).append("polyline")
+        d3.select(TAG_SVG).append("rect")
             .attr('id', 'outer')
-            .style("stroke", "black")
-            .style("fill", "#eeeeee")
+            .attr('x', (origin_x + (wallThickness / 2)))
+            .attr('y', y_scale(0))
             .style("stroke-width", wallThickness)
-            .attr("points", (origin_x + (wallThickness / 2)) + " " + y_scale(0) + ", " + (origin_x + (wallThickness / 2)) + " " + y_scale(depthOd) + " " + (origin_x + innerDiameter - (wallThickness / 2)) + " " + y_scale(depthOd)
-                + " " + (origin_x + innerDiameter - (wallThickness / 2)) + " " + y_scale(0));
+            .attr('width', ( innerDiameter - (wallThickness / 2)))
+            .attr('height', y_scale(depthOd) - y_scale(0))
+            .style("fill", "white")
+            .style('stroke', 'black')
+            .style('stroke-dasharray',  "0, " + ( innerDiameter - (wallThickness / 2)) + " " + (y_scale(depthOd)-y_scale(0)) + " " +( innerDiameter - (wallThickness / 2))
+            +" " +(y_scale(depthOd)-y_scale(0)));
     }
     selectedComponentData = mapOfCoiledTubingComponents[d3.select('#tubing-selection').property('value')];
     if (selectedComponentData) {
@@ -206,13 +227,24 @@ function drawComponent() {
         origin_x = origin_x - (innerDiameter / 2);
         depthOd = d3.select('#depth-id').property('value');
         d3.select(TAG_SVG).select('#inner').remove();
-        d3.select(TAG_SVG).append("polyline")
+        /*d3.select(TAG_SVG).append("polyline")
             .attr('id', 'inner')
             .style("stroke", "black")
             .style("fill", "white")
             .style("stroke-width", wallThickness)
             .attr("points", (origin_x + (wallThickness / 2)) + " " + y_scale(0) + ", " + (origin_x + (wallThickness / 2)) + " " + y_scale(depthOd) + " " + (origin_x + innerDiameter - (wallThickness / 2)) + " " + y_scale(depthOd)
-                + " " + (origin_x + innerDiameter - (wallThickness / 2)) + " " + y_scale(0));
+                + " " + (origin_x + innerDiameter - (wallThickness / 2)) + " " + y_scale(0));*/
+        d3.select(TAG_SVG).append("rect")
+            .attr('id', 'inner')
+            .attr('x', (origin_x + (wallThickness / 2)))
+            .attr('y', y_scale(0))
+            .style("stroke-width", wallThickness)
+            .attr('width', ( innerDiameter - (wallThickness / 2)))
+            .attr('height', y_scale(depthOd) - y_scale(0))
+            .style("fill", "white")
+            .style('stroke', 'black')
+            .style('stroke-dasharray',  "0, " + ( innerDiameter - (wallThickness / 2)) + " " + (y_scale(depthOd)-y_scale(0)) + " " +( innerDiameter - (wallThickness / 2))
+                +" " +(y_scale(depthOd)-y_scale(0)));
     }
 
 }
